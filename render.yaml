@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: pharmacare-backend
+    runtime: docker
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://your-mysql-host:3306/medic?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      - key: SPRING_DATASOURCE_USERNAME
+        value: your-mysql-username
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: your-mysql-password
+      - key: MAILER_EMAIL
+        value: pushpakchaudhari383@gmail.com
+      - key: MAILER_PASSWORD
+        value: your-app-specific-password
