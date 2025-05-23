@@ -9,17 +9,18 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    command: ["./wait-for-it.sh", "db:3306", "--", "java", "-jar", "app.jar"]
+    command: ["./wait-for-it.sh", "db:5432", "--", "java", "-jar", "app.jar"]
 
   db:
-    image: mysql:8
+    image: postgres:13
     environment:
-      MYSQL_DATABASE: medic
-      MYSQL_ROOT_PASSWORD: root
+      POSTGRES_DB: medic
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
     ports:
-      - "3307:3306"
+      - "5432:5432"
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "pg_isready -U root"]
       interval: 10s
       timeout: 5s
       retries: 5
