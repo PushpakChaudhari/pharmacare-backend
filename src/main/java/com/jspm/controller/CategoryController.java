@@ -17,18 +17,18 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://pharmacar.onrender.com")
     @GetMapping
     public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://pharmacar.onrender.com")
     @PostMapping
     public Category createCategory(@RequestBody Category category) {
         return categoryService.saveCategory(category);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://pharmacar.onrender.com")
     @PutMapping("/{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category updatedCategory) {
         Category category = categoryService.updateCategory(id, updatedCategory);
@@ -38,7 +38,7 @@ public class CategoryController {
             return ResponseEntity.notFound().build();
         }
     }
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://pharmacar.onrender.com")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
         boolean deleted = categoryService.deleteCategory(id);
