@@ -13,7 +13,7 @@ public class EmailService {
 
     public void sendResetEmail(String toEmail, String token) {
         String subject = "🔐 Reset Your Pharmacare Password";
-        String resetUrl = "http://localhost:5173/reset-password?token=" + token;
+        String resetUrl = "https://pharmacar.onrender.com/reset-password?token=" + token;
 
         String body = """
                 Hello,
