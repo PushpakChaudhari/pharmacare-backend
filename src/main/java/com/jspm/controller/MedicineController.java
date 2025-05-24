@@ -11,7 +11,6 @@ import com.jspm.model.Medicine;
 import com.jspm.service.CategoryService;
 import com.jspm.service.MedicineService;
 @RestController
-@CrossOrigin(origins = "https://pharmacar.onrender.com", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 @RequestMapping("/api/medicines")
 public class MedicineController {
     @Autowired
