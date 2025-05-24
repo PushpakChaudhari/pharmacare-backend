@@ -60,7 +60,7 @@ import java.util.Map;
 import com.jspm.util.JwtUtil;
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "https://pharmacar.onrender.com")
+@CrossOrigin(origins = "https://pharmacar.onrender.com", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class AuthController {
 
     @Autowired
